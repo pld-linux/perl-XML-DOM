@@ -3,9 +3,9 @@
 Summary:	XML-DOM perl module
 Summary(pl):	Modu³ perla XML-DOM
 Name:		perl-XML-DOM
-Version:	1.21
-Release:	3
-Copyright:	GPL
+Version:	1.25
+Release:	1
+License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/XML-DOM-%{version}.tar.gz
@@ -54,7 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc {Changes,README}.gz samples/*
 
 %{perl_sitelib}/XML/DOM.pm
-%{perl_sitelib}/XML/XML
 %{perl_sitearch}/auto/XML/DOM
 
 %{_mandir}/man3/*
