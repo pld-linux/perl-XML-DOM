@@ -8,8 +8,8 @@ Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/XML-DOM-%{version}.tar.gz
-Patch:		perl-XML-DOM-dep.patch
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/XML-DOM-%{version}.tar.gz
+Patch0:		perl-XML-DOM-dep.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005_03-14
 BuildRequires:	perl-XML-Parser
@@ -18,10 +18,12 @@ Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-XML-DOM - module for building DOM Level 1 compliant document structures.
+XML-DOM - module for building DOM Level 1 compliant document
+structures.
 
 %description -l pl
-XML-DOM - modu³ do tworzenia struktur dokumentów zgodnych z DOM Level 1.
+XML-DOM - modu³ do tworzenia struktur dokumentów zgodnych z DOM Level
+1.
 
 %prep
 %setup -q -n XML-DOM-%{version}
