@@ -9,7 +9,7 @@ Summary:	XML::DOM - build DOM Level 1 compliant document structures
 Summary(pl):	XML::DOM - budowanie struktur dokumentów zgodnych z DOM Level 1
 Name:		perl-XML-DOM
 Version:	1.43
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
