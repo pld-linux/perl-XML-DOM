@@ -4,7 +4,7 @@ Summary:	XML-DOM perl module
 Summary(pl):	Modu³ perla XML-DOM
 Name:		perl-XML-DOM
 Version:	1.25
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
