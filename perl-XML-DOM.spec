@@ -3,8 +3,8 @@
 %bcond_with	tests	# perform "make test"
 			# tests fail -- buggy perl?
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	XML
-%define	pnam	DOM
+%define		pdir	XML
+%define		pnam	DOM
 Summary:	XML::DOM - build DOM Level 1 compliant document structures
 Summary(pl):	XML::DOM - budowanie struktur dokumentów zgodnych z DOM Level 1
 Name:		perl-XML-DOM
