@@ -8,7 +8,7 @@
 +
 +requires="`echo $filelist|/usr/lib/rpm/find-requires`"
 +# utf8 comes with perl => 5.005_50
-+requires_perl="`/usr/lib/rpm/perl.req $filelist|grep -v perl(utf8)`"
++requires_perl="`/usr/lib/rpm/perl.req $filelist|grep -v 'perl(utf8)'`"
 +requires_mod="`rpm -q --whatprovides --qf "%{NAME}\n"  $requires_perl 2>/dev/null`"
 +echo "$requires
 +$requires_perl
