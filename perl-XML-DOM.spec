@@ -1,4 +1,5 @@
-%define		perl_sitelib	%(eval "`perl -V:installsitelib`"; echo $installsitelib)
+%include	/usr/lib/rpm/macros.perl
+%define		__find_requires %{_builddir}/XML-DOM-%{version}/find-perl-requires
 Summary:	XML-DOM perl module
 Summary(pl):	Modu³ perla XML-DOM
 Name:		perl-XML-DOM
@@ -8,11 +9,12 @@ Copyright:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/XML-DOM-%{version}.tar.gz
-BuildRequires:	perl >= 5.005_03-10
+Patch:		perl-XML-DOM-dep.patch
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	perl >= 5.005_03-14
 BuildRequires:	perl-XML-Parser
 %requires_eq	perl
 Requires:	%{perl_sitearch}
-Requires:	perl-XML-Parser
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -23,6 +25,9 @@ XML-DOM - modu³ do tworzenia struktur dokumentów zgodnych z DOM Level 1.
 
 %prep
 %setup -q -n XML-DOM-%{version}
+%patch -p1
+
+chmod +x find-perl-requires
 
 %build
 perl Makefile.PL
