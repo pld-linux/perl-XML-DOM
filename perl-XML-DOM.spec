@@ -1,11 +1,12 @@
-
+#
 # Conditional build:
 %bcond_without tests	# do not perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	XML
 %define	pnam	DOM
-Summary:	Build DOM Level 1 compliant document structures
+Summary:	XML::DOM - Build DOM Level 1 compliant document structures
+Summary(pl):	XML::DOM - budowanie struktur dokumentów zgodnych z DOM Level 1
 Name:		perl-XML-DOM
 Version:	1.43
 Release:	1
@@ -16,16 +17,14 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version
 BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-XML-RegExp
-BuildRequires:	perl-libxml >= 0.07
-BuildRequires:	perl-libwww
 BuildRequires:	perl-XML-Parser >= 2.30
+BuildRequires:	perl-XML-RegExp
+BuildRequires:	perl-libwww
+BuildRequires:	perl-libxml >= 0.07
 %endif
 Obsoletes:	perl-libxml-enno
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-#%define		_noautoreq	'perl(XML::DOM)' 'perl-(
 
 %description
 This is a Perl extension to XML::Parser. It adds a new 'Style' to
@@ -35,6 +34,14 @@ However, there is a new DOM module, XML::GDOME which is under active
 development and significantly faster than XML::DOM, since it is based
 on the libgdome C library.
 
+%description -l pl
+To jest rozszerzenie Perla do XML::Parser. Dodaje do XML::Parser nowy
+styl o nazwie "Dom", pozwalaj±c modu³owi budowaæ obiektowo
+zorientowane struktury danych z interfejsem zgodnym z DOM Level 1.
+Aczkolwiek jest nowy modu³ DOM, XML::GDOME - aktualnie aktywnie
+rozwijany i znacznie szybszy ni¿ XML::DOM, poniewa¿ jest oparty na
+bibliotece C libgdome.
+
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
@@ -43,6 +50,7 @@ on the libgdome C library.
 	INSTALLDIRS=vendor
 
 %{__make}
+
 %{?with_tests:%{__make} test}
 
 %install
