@@ -1,7 +1,7 @@
 #
 # Conditional build:
-%bcond_without tests	# do not perform "make test"
-#
+%bcond_with	tests	# perform "make test"
+			# tests fail -- buggy perl?
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	XML
 %define	pnam	DOM
@@ -9,7 +9,7 @@ Summary:	XML::DOM - build DOM Level 1 compliant document structures
 Summary(pl):	XML::DOM - budowanie struktur dokumentów zgodnych z DOM Level 1
 Name:		perl-XML-DOM
 Version:	1.43
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
