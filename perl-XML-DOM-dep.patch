@@ -1,0 +1,15 @@
+--- XML-DOM-1.21.req/find-perl-requires	Thu Jan  1 01:00:00 1970
++++ XML-DOM-1.21/find-perl-requires	Sat Nov  6 18:39:23 1999
+@@ -0,0 +1,12 @@
++#!/bin/sh
++ulimit -c 0
++
++filelist=`sed "s/['\"]/\\\&/g"`
++
++requires="`echo $filelist|/usr/lib/rpm/find-requires`"
++# utf8 comes with perl => 5.005_50
++requires_perl="`/usr/lib/rpm/perl.req $filelist|grep -v perl(utf8)`"
++requires_mod="`rpm -q --whatprovides --qf "%{NAME}\n"  $requires_perl 2>/dev/null`"
++echo "$requires
++$requires_perl
++$requires_mod"|  sort -u
