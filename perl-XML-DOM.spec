@@ -4,14 +4,15 @@ Summary:	XML-DOM perl module
 Summary(pl):	Modu³ perla XML-DOM
 Name:		perl-XML-DOM
 Version:	1.25
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
+Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/XML-DOM-%{version}.tar.gz
-Patch0:		perl-XML-DOM-dep.patch
+Patch0:		%{name}-dep.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-BuildRequires:	perl >= 5.005_03-14
+BuildRequires:	perl >= 5.6
 BuildRequires:	perl-XML-Parser
 %requires_eq	perl
 Requires:	%{perl_sitearch}
@@ -37,25 +38,16 @@ perl Makefile.PL
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-(
-  cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/XML/DOM
-  sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
-  mv .packlist.new .packlist
-)
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
-        Changes README
+gzip -9nf Changes README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {Changes,README}.gz samples/*
-
+%doc *.gz samples/*
 %{perl_sitelib}/XML/DOM.pm
-%{perl_sitearch}/auto/XML/DOM
-
 %{_mandir}/man3/*
