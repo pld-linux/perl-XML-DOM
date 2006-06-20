@@ -8,13 +8,13 @@
 Summary:	XML::DOM - build DOM Level 1 compliant document structures
 Summary(pl):	XML::DOM - budowanie struktur dokumentów zgodnych z DOM Level 1
 Name:		perl-XML-DOM
-Version:	1.43
-Release:	3
+Version:	1.44
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	e4c3fdd46e7ada0f9db326b493058d4d
+# Source0-md5:	1ec2032a06e5762984f7a332c199c205
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
