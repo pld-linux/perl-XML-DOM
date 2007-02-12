@@ -6,7 +6,7 @@
 %define		pdir	XML
 %define		pnam	DOM
 Summary:	XML::DOM - build DOM Level 1 compliant document structures
-Summary(pl):	XML::DOM - budowanie struktur dokumentÛw zgodnych z DOM Level 1
+Summary(pl.UTF-8):   XML::DOM - budowanie struktur dokument√≥w zgodnych z DOM Level 1
 Name:		perl-XML-DOM
 Version:	1.44
 Release:	1
@@ -35,12 +35,12 @@ However, there is a new DOM module, XML::GDOME which is under active
 development and significantly faster than XML::DOM, since it is based
 on the libgdome C library.
 
-%description -l pl
+%description -l pl.UTF-8
 To jest rozszerzenie Perla do XML::Parser. Dodaje do XML::Parser nowy
-styl o nazwie "Dom", pozwalaj±c modu≥owi budowaÊ obiektowo
+styl o nazwie "Dom", pozwalajƒÖc modu≈Çowi budowaƒá obiektowo
 zorientowane struktury danych z interfejsem zgodnym z DOM Level 1.
-Aczkolwiek jest nowy modu≥ DOM, XML::GDOME - aktualnie aktywnie
-rozwijany i znacznie szybszy niø XML::DOM, poniewaø jest oparty na
+Aczkolwiek jest nowy modu≈Ç DOM, XML::GDOME - aktualnie aktywnie
+rozwijany i znacznie szybszy ni≈º XML::DOM, poniewa≈º jest oparty na
 bibliotece C libgdome.
 
 %prep
