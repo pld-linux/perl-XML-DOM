@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test"
 			# tests fail -- buggy perl?
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	XML
 %define		pnam	DOM
 Summary:	XML::DOM - build DOM Level 1 compliant document structures
